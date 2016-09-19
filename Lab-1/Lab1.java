@@ -7,13 +7,13 @@ public class Lab1 {
 			System.out.println();
 			System.out.println("1: Convert Dec number to Bin");
 			System.out.println("2: Convert Bin number to Dec");
-			System.out.println("3: quit");
+			System.out.println("3: Quit");
 			System.out.print("What would you like to do: ");
 			System.out.println();
 			switch(keyboard.nextInt()){
 				case 1: 
 					System.out.print("Enter the number you want to convert: ");
-					System.out.println("That number in Binary is: " + reverse(numberConv(keyboard.nextInt(),8 ,0), "", 0));
+					System.out.println("That number in Binary is: " + reverse(decToBin(keyboard.nextInt(),8 ,0), "", 0));
 					break;	
 
 				case 2:
@@ -61,13 +61,13 @@ public class Lab1 {
 
 	// returns the binary representation of an interger as a String that needs to be reversed
 	// the args should be (yourInt, numberOfBits, 0)
-	public static String numberConv(int number,int bits, int i){
+	public static String decToBin(int number,int bits, int i){
 		if(i == bits){
 			return "";
 		}
 		if((number % 2) != 0){
-			return "1" + numberConv(number / 2, bits, ++i);
+			return "1" + decToBin(number / 2, bits, ++i);
 		}
-		return "0" + numberConv(number / 2, bits, ++i);
+		return "0" + decToBin(number / 2, bits, ++i);
 	}
 }
