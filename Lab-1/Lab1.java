@@ -1,3 +1,15 @@
+/*
+ * Gregory Mann	
+ * E01457245
+ * COSC 211
+ * Fall 2016
+ * Lab-1
+ * 
+ * This lab is a menu driven program that takes input from the user
+ * and either converts it from a binary representation of a number 
+ * to a decimal number or vice versa taking a decimal number and 
+ * converting it to a binary number.
+ */
 import java.util.Scanner;
 import java.lang.*;
 public class Lab1 {
@@ -8,8 +20,8 @@ public class Lab1 {
 			System.out.println("1: Convert Dec number to Bin");
 			System.out.println("2: Convert Bin number to Dec");
 			System.out.println("3: Quit");
-			System.out.print("What would you like to do: ");
 			System.out.println();
+			System.out.print("What would you like to do: ");
 			switch(keyboard.nextInt()){
 				case 1: 
 					System.out.print("Enter the number you want to convert: ");
@@ -23,13 +35,13 @@ public class Lab1 {
 				
 				case 3: 
 					System.exit(0);
-					break; // do i really need this?
+					break;
 			}
 		}
 	}
 
 // returns an integer based on the binary representation of a number 
-// the args should be (binNumberAsAString, 0)
+// binToDec(String, 0)
 	public static int binToDec(String number, int i){
 		if(i == number.length()){
 			return 0;
@@ -42,6 +54,7 @@ public class Lab1 {
 
 // this is an integer version of the Math.pow function
 // returns the first integer raised to the power of the second
+// pow(int, int)
 	public static int pow(int x, int y) {
 		int z = 1;
 		for(y = y; y > 0; y--){
@@ -50,8 +63,8 @@ public class Lab1 {
 		return z;
 	}
 
-	// returns a string that is the rverse of the first string passed
-	// the args should be (yourString, "", 0)
+	// returns a string that is the reverse of the first string passed
+	// reverse(String, "", 0)
 	public static String reverse(String x, String y, int i){
 		if(i == x.length()){
 			return "";
@@ -59,8 +72,8 @@ public class Lab1 {
 		return y + x.charAt((x.length() - i) - 1) + reverse(x, y, ++i);
 	}
 
-	// returns the binary representation of an interger as a String that needs to be reversed
-	// the args should be (yourInt, numberOfBits, 0)
+	// returns the binary representation of an integer as a String that needs to be reversed
+	// decToBin(int, int, 0)
 	public static String decToBin(int number,int bits, int i){
 		if(i == bits){
 			return "";
