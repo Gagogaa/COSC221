@@ -1,7 +1,7 @@
 /*
  * Gregory Mann	
  * E01457245
- * COSC 211
+ * COSC 211-1
  * Fall 2016
  * Lab-1
  * 
@@ -40,8 +40,8 @@ public class Lab1 {
 		}
 	}
 
-// returns an integer based on the binary representation of a number 
-// binToDec(String, 0)
+	// returns an integer based on the binary representation of a number 
+	// binToDec(String, 0)
 	public static int binToDec(String number, int i){
 		if(i == number.length()){
 			return 0;
@@ -52,9 +52,9 @@ public class Lab1 {
 		return binToDec(number, ++i);
 	}
 
-// this is an integer version of the Math.pow function
-// returns the first integer raised to the power of the second
-// pow(int, int)
+	// this is an integer version of the Math.pow function
+	// returns the first integer raised to the power of the second
+	// pow(int, int)
 	public static int pow(int x, int y) {
 		int z = 1;
 		for(y = y; y > 0; y--){
