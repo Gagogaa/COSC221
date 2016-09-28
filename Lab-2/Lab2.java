@@ -12,7 +12,7 @@
  */
 import java.util.Scanner;
 import java.lang.*;
-public class Lab1 {
+public class Lab2 {
 	public static Scanner keyboard = new Scanner(System.in);
 	public static void main(String[] args){
 		while(true){
@@ -40,17 +40,30 @@ public class Lab1 {
 		}
 	}
 
-	// returns an integer based on the binary representation of a number 
+	// returns a signed integer based on the binary representation of that number 
 	// binToDec(String, 0)
+
 	public static int binToDec(String number, int i){
-		if(i == number.length()){
+		if(number.charAt((number.length() - i) - 1) == '1'){
+			int x = innerBinToDec(number, i);
+			return x - (x * 2);
+		} else {
+			return innerBinToDec(number, i);
+		}
+	}
+
+	// returns an integer based on the binary representation of a number excluding the sign bit
+	// binToDec(String, 0)
+	public static int innerBinToDec(String number, int i){
+		if(i == number.length() - 1){
 			return 0;
 		}
 		if(number.charAt((number.length() - i) - 1) == '1'){
-			return pow(2, i) + binToDec(number, ++i);
+			return pow(2, i) + innerBinToDec(number, ++i);
 		}
 		return binToDec(number, ++i);
 	}
+	
 
 	// this is an integer version of the Math.pow function
 	// returns the first integer raised to the power of the second
@@ -71,10 +84,28 @@ public class Lab1 {
 		}
 		return y + x.charAt((x.length() - i) - 1) + reverse(x, y, ++i);
 	}
+	
+
+
+	// returns the inverse binary representation of an integer as a String that needs to be reversed
+	// revDecToBin(int, int, 0)
+	public static String revDecToBin(int number, int bits, int i){
+		if(i == bits){
+			return "";
+		}
+		if((number % 2) != 0){
+			return "0" + revDecToBin(number / 2, bits, ++i);
+		}
+		return "1" + revDecToBin(number / 2, bits, ++i);	
+	}
+
 
 	// returns the binary representation of an integer as a String that needs to be reversed
 	// decToBin(int, int, 0)
 	public static String decToBin(int number,int bits, int i){
+		if(number < 0){
+			return revDecToBin(number +1, bits, i);
+		}
 		if(i == bits){
 			return "";
 		}
