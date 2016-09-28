@@ -3,12 +3,13 @@
  * E01457245
  * COSC 211-1
  * Fall 2016
- * Lab-1
+ * Lab-2
  * 
  * This lab is a menu driven program that takes input from the user
  * and either converts it from a binary representation of a number 
  * to a decimal number or vice versa taking a decimal number and 
- * converting it to a binary number.
+ * converting it to a binary number. This program is equipt to deal
+ * with signed numbers 
  */
 import java.util.Scanner;
 import java.lang.*;
@@ -42,10 +43,12 @@ public class Lab2 {
 
 	// returns a signed integer based on the binary representation of that number 
 	// binToDec(String, 0)
-
 	public static int binToDec(String number, int i){
 		if(number.charAt((number.length() - i) - 1) == '1'){
 			int x = innerBinToDec(number, i);
+			if(x == 0){ // max negitive number
+			 return - pow(2, (number.length() - 1));
+			}
 			return x - (x * 2);
 		} else {
 			return innerBinToDec(number, i);
@@ -104,7 +107,7 @@ public class Lab2 {
 	// decToBin(int, int, 0)
 	public static String decToBin(int number,int bits, int i){
 		if(number < 0){
-			return revDecToBin(number +1, bits, i);
+			return revDecToBin(number + 1, bits, i);
 		}
 		if(i == bits){
 			return "";
