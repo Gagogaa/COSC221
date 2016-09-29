@@ -8,8 +8,8 @@
  * This lab is a menu driven program that takes input from the user
  * and either converts it from a binary representation of a number 
  * to a decimal number or vice versa taking a decimal number and 
- * converting it to a binary number. This program is equipt to deal
- * with signed numbers 
+ * converting it to a binary number. This version is equipt to handle 
+ * signed numbers.
  */
 import java.util.Scanner;
 import java.lang.*;
@@ -46,7 +46,7 @@ public class Lab2 {
 	public static int binToDec(String number, int i){
 		if(number.charAt((number.length() - i) - 1) == '1'){
 			int x = innerBinToDec(number, i);
-			if(x == 0){ // max negitive number
+			if(x == 0){ // max negative number
 			 return - pow(2, (number.length() - 1));
 			}
 			return x - (x * 2);
@@ -66,7 +66,6 @@ public class Lab2 {
 		}
 		return binToDec(number, ++i);
 	}
-	
 
 	// this is an integer version of the Math.pow function
 	// returns the first integer raised to the power of the second
@@ -87,8 +86,6 @@ public class Lab2 {
 		}
 		return y + x.charAt((x.length() - i) - 1) + reverse(x, y, ++i);
 	}
-	
-
 
 	// returns the inverse binary representation of an integer as a String that needs to be reversed
 	// revDecToBin(int, int, 0)
@@ -101,7 +98,6 @@ public class Lab2 {
 		}
 		return "1" + revDecToBin(number / 2, bits, ++i);	
 	}
-
 
 	// returns the binary representation of an integer as a String that needs to be reversed
 	// decToBin(int, int, 0)
