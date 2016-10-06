@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Lab2	Lab2.java	/^public class Lab2 {$/;"	c
+Lab3	Lab3.java	/^ public class Lab3 {$/;"	c
+binAddOne	Lab3.java	/^	public static String binAddOne(String number, boolean carryOut){$/;"	m	class:Lab3
+binToDec	Lab2.java	/^	public static int binToDec(String number, int i){$/;"	m	class:Lab2
+binToDec	Lab3.java	/^	public static int binToDec(String number, int i){$/;"	m	class:Lab3
+bitFlip	Lab2.java	/^	public static String bitFlip(String source){$/;"	m	class:Lab2
+bitFlip	Lab3.java	/^	public static String bitFlip(String source){$/;"	m	class:Lab3
+decToBin	Lab2.java	/^	public static String decToBin(int number,int bits, int i){$/;"	m	class:Lab2
+decToBin	Lab3.java	/^	public static String decToBin(int number,int bits, int i){$/;"	m	class:Lab3
+innerBinToDec	Lab2.java	/^	public static int innerBinToDec(String number, int i){$/;"	m	class:Lab2
+innerBinToDec	Lab3.java	/^	public static int innerBinToDec(String number, int i){$/;"	m	class:Lab3
+keyboard	Lab2.java	/^	public static Scanner keyboard = new Scanner(System.in);$/;"	f	class:Lab2
+keyboard	Lab3.java	/^ 	public static Scanner keyboard = new Scanner(System.in);$/;"	f	class:Lab3
+main	Lab2.java	/^	public static void main(String[] args){$/;"	m	class:Lab2
+main	Lab3.java	/^	public static void main(String[] args){$/;"	m	class:Lab3
+pow	Lab2.java	/^	public static int pow(int x, int y) {$/;"	m	class:Lab2
+pow	Lab3.java	/^	public static int pow(int x, int y) {$/;"	m	class:Lab3
+revDecToBin	Lab2.java	/^	public static String revDecToBin(int number, int bits, int i){$/;"	m	class:Lab2
+revDecToBin	Lab3.java	/^	public static String revDecToBin(int number, int bits, int i){$/;"	m	class:Lab3
+reverse	Lab2.java	/^	public static String reverse(String x, String y, int i){$/;"	m	class:Lab2
+reverse	Lab3.java	/^	public static String reverse(String x, String y, int i){$/;"	m	class:Lab3
+twosComp	Lab3.java	/^	public static String twosComp(String number){$/;"	m	class:Lab3
