@@ -18,31 +18,27 @@
  	public static Scanner keyboard = new Scanner(System.in);
 	public static void main(String[] args){
 		System.out.println(binAdd("00001011", "10010011"));
-
 	}
 
-	public static String binAdd(String number, String numberOne){
+	// needs to be reversed
+	public static String binAdd(String newNumber, String newNumberOne){
 		String out = "";
 		boolean carryOut = false;
+		String number = reverse(newNumber, "", 0);
+		String numberOne = reverse(newNumberOne, "", 0);
 
 		for(int i = 0; i < number.length(); i++){
+			System.out.println(number.charAt(i) + " " + numberOne.charAt(i));
 			if(number.charAt(i) == '1' && numberOne.charAt(i) == '1' && carryOut){
 				out = out + '1';
-				continue;
-				// this is stupid i need to find a better way to do this
 			} else if ((number.charAt(i) == '1' && numberOne.charAt(i) == '1') || (number.charAt(i) == '1' && carryOut) || (numberOne.charAt(i) == '1' && carryOut)) {
-				System.out.println(number.charAt(i) == '1' && numberOne.charAt(i) == '1');
 				carryOut = true;
 				out = out + '0';
-				continue;
 			} else if (number.charAt(i) == '1' || numberOne.charAt(i) == '1' || carryOut){
 				carryOut = false;
 				out = out + '1';
-				continue;
 			} else {
-				carryOut = false;
 				out = out + '0';
-				continue;
 			}
 		}
 		return out;
