@@ -6,7 +6,7 @@
  * Lab-3
  *
  * 
- * 
+ * TODO: for the bin to dec the negitive numbers need to be flipped first then converted and then made negitive
  * 
  * 
  * 
@@ -17,7 +17,42 @@
  public class Lab3 {
  	public static Scanner keyboard = new Scanner(System.in);
 	public static void main(String[] args){
-		System.out.println(binAdd("00001011", "10010011"));
+		while(true){
+			System.out.println("What would you like to do?");
+			System.out.println("1: Add");
+			System.out.println("2: Subtract");
+			System.out.println("3: Quit");
+			switch(keyboard.nextInt()){
+				case 1:
+					System.out.println("Please enter two binary numbers");
+					System.out.print("First Number: ");
+					String one = keyboard .next();
+					System.out.print("Second Number: ");
+					String two = keyboard.next();
+					String sum = reverse(binAdd(one, two), "", 0);
+					System.out.println("You added: " + one + " (" + binToDec(one, 0) + ") " + two + " (" + binToDec(two, 0) + ") " + sum + " (" + binToDec(sum, 0) + ") ");
+					break;
+
+				case 2:
+					System.out.println("Please enter two binary numbers");
+					System.out.print("First Number: ");
+					one = keyboard .next();
+					System.out.print("Second Number: ");
+					two = keyboard.next();
+					String sub = reverse(binAdd(one, reverse(twosComp(two), "", 0)), "", 0);
+					System.out.println(reverse(twosComp(two), "", 0));
+					System.out.println("You Subtracted: " + one + " (" + binToDec(one, 0) + ") " + two + " (" + binToDec(two, 0) + ") " + sub + " (" + binToDec(sub, 0) + ") ");
+					break;
+
+				case 3:
+					System.out.println("Thank you for using the program!");
+					System.exit(0);
+
+				default:
+					System.out.println("Sorry thats not a valid option");
+					break;
+			}
+		}
 	}
 
 	// needs to be reversed
@@ -28,7 +63,6 @@
 		String numberOne = reverse(newNumberOne, "", 0);
 
 		for(int i = 0; i < number.length(); i++){
-			System.out.println(number.charAt(i) + " " + numberOne.charAt(i));
 			if(number.charAt(i) == '1' && numberOne.charAt(i) == '1' && carryOut){
 				out = out + '1';
 			} else if ((number.charAt(i) == '1' && numberOne.charAt(i) == '1') || (number.charAt(i) == '1' && carryOut) || (numberOne.charAt(i) == '1' && carryOut)) {
@@ -43,7 +77,7 @@
 		}
 		return out;
 	}
-	
+
 	public static String binAddOne(String number){
 		return binAdd(number, "00000001");
 	}
@@ -53,11 +87,10 @@
 		return binAddOne(bitFlip(number));	
 	}
 
-	//TODO: rework this method to not convert to decimal
 	// binToDec(String, 0);
 	public static int binToDec(String number, int i){
 		if(number.charAt(0) == '1'){
-			int x = innerBinToDec(twosComp(number), i);
+			int x = innerBinToDec(reverse(twosComp(number), "", 0), i);
 			if(x == 0){ // max negative number
 			 return - pow(2, (number.length() - 1));
 			}
