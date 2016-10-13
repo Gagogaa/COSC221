@@ -1,15 +1,11 @@
 /*
- * Gregory Mann
- * E01457245
+ * Gregory Mann * E01457245
  * COSC 211-1
  * Fall 2016
  * Lab-3
  *
- * 
- * TODO: for the bin to dec the negitive numbers need to be flipped first then converted and then made negitive
- * 
- * 
- * 
+ * This is a menu driven program for adding and subtracting two signed binary numbers given 
+ * by the user.
  */
 
  import java.util.Scanner;
@@ -22,26 +18,29 @@
 			System.out.println("1: Add");
 			System.out.println("2: Subtract");
 			System.out.println("3: Quit");
+			System.out.println();
 			switch(keyboard.nextInt()){
 				case 1:
-					System.out.println("Please enter two binary numbers");
+					System.out.println("Please enter two binary numbers to Add");
 					System.out.print("First Number: ");
 					String one = keyboard .next();
 					System.out.print("Second Number: ");
 					String two = keyboard.next();
 					String sum = reverse(binAdd(one, two), "", 0);
-					System.out.println("You added: " + one + " (" + binToDec(one, 0) + ") " + two + " (" + binToDec(two, 0) + ") " + sum + " (" + binToDec(sum, 0) + ") ");
+					System.out.println("You added: " + one + " (" + binToDec(one, 0) + ") + " + two + " (" + binToDec(two, 0) + ") = " + sum + " (" + binToDec(sum, 0) + ") ");
+					System.out.println();
 					break;
 
 				case 2:
-					System.out.println("Please enter two binary numbers");
+					System.out.println("Please enter two binary numbers to Subtract");
 					System.out.print("First Number: ");
 					one = keyboard .next();
 					System.out.print("Second Number: ");
 					two = keyboard.next();
 					String sub = reverse(binAdd(one, reverse(twosComp(two), "", 0)), "", 0);
 					System.out.println(reverse(twosComp(two), "", 0));
-					System.out.println("You Subtracted: " + one + " (" + binToDec(one, 0) + ") " + two + " (" + binToDec(two, 0) + ") " + sub + " (" + binToDec(sub, 0) + ") ");
+					System.out.println("You Subtracted: " + one + " (" + binToDec(one, 0) + ") - " + two + " (" + binToDec(two, 0) + ") = " + sub + " (" + binToDec(sub, 0) + ") ");
+					System.out.println();
 					break;
 
 				case 3:
@@ -55,7 +54,8 @@
 		}
 	}
 
-	// needs to be reversed
+	// Adds two binary numbers in string form the out put needs to be reversed
+	// binAdd(String, String)
 	public static String binAdd(String newNumber, String newNumberOne){
 		String out = "";
 		boolean carryOut = false;
@@ -78,15 +78,20 @@
 		return out;
 	}
 
+	// Adds one to a binary string number and returns it as a string that needs to be reversed
+	// binAddOne(String)
 	public static String binAddOne(String number){
 		return binAdd(number, "00000001");
 	}
 
 	// Its a wraper method for bitFlip and binAddOne
+	// takes the twos complement of a number and returns it as a binary string
+	// TwosComp(String)
 	public static String twosComp(String number){
 		return binAddOne(bitFlip(number));	
 	}
 
+	// Converts a binary number to a decimal number 
 	// binToDec(String, 0);
 	public static int binToDec(String number, int i){
 		if(number.charAt(0) == '1'){
@@ -145,31 +150,4 @@
 		}
 		return y + x.charAt((x.length() - i) - 1) + reverse(x, y, ++i);
 	}
-
-	// returns the inverse binary representation of an integer as a String that needs to be reversed
-	// revDecToBin(int, int, 0)
-	public static String revDecToBin(int number, int bits, int i){
-		if(i == bits){
-			return "";
-		}
-		if((number % 2) != 0){
-			return "0" + revDecToBin(number / 2, bits, ++i);
-		}
-		return "1" + revDecToBin(number / 2, bits, ++i);
-	}
-
-	// returns the binary representation of an integer as a String that needs to be reversed
-	// decToBin(int, int, 0)
-	public static String decToBin(int number,int bits, int i){
-		if(number < 0){
-			return revDecToBin(number + 1, bits, i);
-		}
-		if(i == bits){
-			return "";
-		}
-		if((number % 2) != 0){
-			return "1" + decToBin(number / 2, bits, ++i);
-		}
-		return "0" + decToBin(number / 2, bits, ++i);
-	}
- }
+}
