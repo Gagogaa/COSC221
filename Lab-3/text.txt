@@ -1,0 +1,5 @@
+String out;	
+for(int i= 0; i < 8; i++){
+	out += sum[i];
+}
+return out;
