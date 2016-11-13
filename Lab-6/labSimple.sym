@@ -1,0 +1,12 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	MSG1              302A
+//	MSG2              305A
+//	CLRF              3081
+//	NEG32             3082
+//	CHAR1             3083
+//	CHAR2             3084
+//	CHAR3             3085
+
