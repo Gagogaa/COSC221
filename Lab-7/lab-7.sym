@@ -1,0 +1,16 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	PRINT             3018
+//	MSG1              301C
+//	MSG2              3047
+//	CLRF              3060
+//	OFFS              3061
+//	OFF               3062
+//	ONE               3063
+//	MASK1             3064
+//	MASK2             3065
+//	NUM1              3066
+//	NUM2              3067
+
