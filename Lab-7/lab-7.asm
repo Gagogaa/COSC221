@@ -1,4 +1,4 @@
-; Lab-6
+; Lab-7
 ; COSC 221-1
 ; Fall 2016
 ; Gregory Mann
@@ -36,7 +36,7 @@
         ADD R0,R0,R1    ; Add R0 into R1 and store the output into R0
 
         ADD R1,R0,#-9   ; Check to see if sum is greater than 9
-        BRnz PRINT      ; Goto print if the result is non-positive
+        BRnz PRINT      ; Goto print if the result is non-positive less than 10
 
         ADD R1,R0,#0    ; Store sum in R1
         LD R0,ONE       ; Load ascii "1" into R0
