@@ -51,13 +51,13 @@ PRINT   LD R1,OFF       ; Load the offset into R1
         HALT
 
         ; Data Area
-        MSG1    .STRINGZ "Please enter a two-digit decimal number > "
-        MSG2    .STRINGZ "The sum of the digits = "
-        CLRF    .FILL x000A
-        OFFS    .FILL #-48
-        OFF     .FILL #48
-        ONE     .FILL #49
-        NUM1    .BLKW 1
-        NUM2    .BLKW 1
+MSG1    .STRINGZ "Please enter a two-digit decimal number > "
+MSG2    .STRINGZ "The sum of the digits = "
+CLRF    .FILL x000A
+OFFS    .FILL #-48
+OFF     .FILL #48
+ONE     .FILL #49
+NUM1    .BLKW 1
+NUM2    .BLKW 1
 
         .END

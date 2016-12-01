@@ -1,0 +1,16 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	LOOP              3003
+//	BREAKNL           300D
+//	BREAK             3010
+//	AGAIN             3017
+//	NEXT              3020
+//	MSG1              302A
+//	MSG2              304D
+//	MSG3              305F
+//	MSG4              3072
+//	STRING            3083
+//	OFFS              308D
+
