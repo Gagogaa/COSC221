@@ -1,0 +1,9 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	MSG               3010
+//	MSG1              302C
+//	GREATER           3043
+//	PRINTR2           304A
+
