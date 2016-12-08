@@ -2,8 +2,9 @@
 // Scope level 0:
 //	Symbol Name       Page Address
 //	----------------  ------------
-//	MSG               3011
-//	MSG1              302D
-//	GREATER           3044
-//	PRINTR2           304C
+//	MSG               3016
+//	MSG1              3037
+//	MSG2              3059
+//	GREATER           3070
+//	PRINTR2           3078
 

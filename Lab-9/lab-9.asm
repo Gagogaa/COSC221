@@ -16,6 +16,13 @@
         AND R1,R1,#0    ; Clear R1
         ADD R1,R0,R1    ; Store R0 in R1
 
+        AND R0,R0,#0    ; Blank out R0
+        ADD R0,R0,#10   ; Put the newline character into register 0
+        OUT             ; Print out newline
+
+        LEA R0,MSG1     ; Load MSG1 into R0
+        PUTS            ; Print out MSG1
+
         GETC            ; Get the character
         OUT             ; Echo the character
 
@@ -25,8 +32,8 @@
         ADD R0,R0,#10   ; Put the newline character into register 0
         OUT             ; Print out newline
 
-        LEA R0,MSG1     ; Load MSG1
-        PUTS            ; Print out MSG1
+        LEA R0,MSG2     ; Load MSG2
+        PUTS            ; Print out MSG2
 
         JSR GREATER     ; Call Greater
 
@@ -35,8 +42,9 @@
         HALT
 
         ; Data Area
-MSG .STRINGZ "Please input two numbers > "
-MSG1 .STRINGZ "The larger number is: "
+MSG .STRINGZ "Please input the first number > "
+MSG1 .STRINGZ "Please input the second number > "
+MSG2 .STRINGZ "The larger number is: "
 
 ; *************** Subroutine ***************
 ; This Subroutine takes two single digit ints
