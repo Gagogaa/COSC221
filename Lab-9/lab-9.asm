@@ -13,6 +13,7 @@
         GETC            ; Get the character
         OUT             ; Echo the character
 
+        AND R1,R1,#0    ; Clear R1
         ADD R1,R0,R1    ; Store R0 in R1
 
         GETC            ; Get the character
@@ -38,13 +39,14 @@ MSG .STRINGZ "Please input two numbers > "
 MSG1 .STRINGZ "The larger number is: "
 
 ; *************** Subroutine ***************
-; This Subroutine takes two numbers and
-; returns the larger of the two.
+; This Subroutine takes two single digit ints
+; and returns the larger of the two.
 ; The inputs are stored in R1 and R2. The
 ; result will be stored in R0
 ; ******************************************
-GREATER NOT R0,R2       ; Flip the bits
-        ADD R0,R2,#1    ; Add 1
+GREATER AND R0,R0,#0    ; Clear R0
+        NOT R0,R2       ; Flip the bits and store it in R0
+        ADD R0,R0,#1    ; Add 1
 
         ADD R0,R1,R0    ; Add the two to get the result
 
